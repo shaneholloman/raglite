@@ -1,3 +1,29 @@
+## v1.1.0 (2026-05-11)
+
+### Feat
+
+- allow for multiple metadata filters on list fields (#179)
+- add Mistral Document AI for document parsing (#175)
+- support deletion for PostgreSQL and DuckDB (#170)
+- paralell tool execution (#166)
+- change sentence splitter to sat-1l-sm and fix: context management. (#164)
+- add self-query functionality (#163)
+- add document metadata expansion (#161)
+- add metadata filtering (#160)
+
+### Fix
+
+- resolve ruff 0.15.0 lint violations (#178)
+- **insert**: handle duplicate documents (#174)
+- relax user prompt in programmatic rag (#177)
+- ignore warning that prevents tests from running (#173)
+- cap max_workers in insert_documents (#167)
+
+### Perf
+
+- replace ILP solver with O(N) dynamic programming for sentence splitting (#176)
+- optimise splitting of chunklets (#171)
+
 ## v1.0.0 (2025-06-11)
 
 ### Feat
