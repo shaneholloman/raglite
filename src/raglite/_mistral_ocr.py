@@ -73,10 +73,7 @@ def _get_mistral_client(processor_config: MistralOCRConfig) -> Any:
     try:
         from mistralai import Mistral
     except ImportError as e:
-        error_msg = (
-            "To use MistralOCR, please install the `mistral-ocr` extra: "
-            "`pip install raglite[mistral-ocr]` or `uv add raglite[mistral-ocr]`."
-        )
+        error_msg = "To use MistralOCR, please install or upgrade `mistralai`."
         raise ImportError(error_msg) from e
 
     api_key = _get_api_key(processor_config)
@@ -88,10 +85,7 @@ def _get_response_format_converter() -> Any:
     try:
         from mistralai.extra import response_format_from_pydantic_model
     except ImportError as e:
-        error_msg = (
-            "To use MistralOCR, please install the `mistral-ocr` extra: "
-            "`uv add raglite[mistral-ocr]` or `pip install raglite[mistral-ocr]`."
-        )
+        error_msg = "To use MistralOCR, please install or upgrade `mistralai`."
         raise ImportError(error_msg) from e
     return response_format_from_pydantic_model
 
@@ -183,7 +177,7 @@ def mistral_ocr_to_markdown(doc_path: Path, *, processor_config: MistralOCRConfi
     Raises
     ------
     ImportError
-        If the mistralai package is not installed.
+        If the mistralai package is not installed or is incompatible.
     ValueError
         If MISTRAL_API_KEY is not set and MistralOCRConfig.api_key is None.
     MistralOCRError

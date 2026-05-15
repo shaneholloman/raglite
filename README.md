@@ -70,10 +70,10 @@ To add support for filetypes other than PDF, use the `pandoc` extra:
 pip install raglite[pandoc]
 ```
 
-To add support for high-quality document processing with [Mistral OCR](https://docs.mistral.ai/capabilities/document/), use the `mistral-ocr` extra:
+To add support for high-quality document processing with [Mistral OCR](https://docs.mistral.ai/capabilities/document/), install `mistralai`:
 
 ```sh
-pip install raglite[mistral-ocr]
+pip install mistralai
 ```
 
 To add support for evaluation, use the `ragas` extra:
@@ -160,7 +160,7 @@ my_config = RAGLiteConfig(
 > ✍️ To insert documents other than PDF, install the `pandoc` extra with `pip install raglite[pandoc]`.
 
 > [!TIP]
-> 🔎 For higher-quality document processing with automatic image descriptions, install the `mistral-ocr` extra with `pip install raglite[mistral-ocr]` and configure it as follows:
+> 🔎 For higher-quality document processing with automatic image descriptions, install `mistralai` and configure it as follows:
 > ```python
 > from raglite import RAGLiteConfig, MistralOCRConfig
 >
@@ -490,7 +490,7 @@ The following development environments are supported:
 
 - This project follows the [Conventional Commits](https://www.conventionalcommits.org/) standard to automate [Semantic Versioning](https://semver.org/) and [Keep A Changelog](https://keepachangelog.com/) with [Commitizen](https://github.com/commitizen-tools/commitizen).
 - Run `poe` from within the development environment to print a list of [Poe the Poet](https://github.com/nat-n/poethepoet) tasks available to run on this project.
-- Run `uv add {package}` from within the development environment to install a run time dependency and add it to `pyproject.toml` and `uv.lock`. Add `--dev` to install a development dependency.
+- Run `uv add {package}` from within the development environment to install a run time dependency and add it to `pyproject.toml`. Add `--dev` to install a development dependency.
 - Run `uv sync --upgrade` from within the development environment to upgrade all dependencies to the latest versions allowed by `pyproject.toml`. Add `--only-dev` to upgrade the development dependencies only.
 - Run `cz bump` to bump the package's version, update the `CHANGELOG.md`, and create a git tag. Then push the changes and the git tag with `git push origin main --tags`.
 
