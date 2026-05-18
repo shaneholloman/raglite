@@ -1,3 +1,9 @@
+## v1.1.1 (2026-05-18)
+
+### Fix
+
+- narrow Python support and remove Mistral extra (#183)
+
 ## v1.1.0 (2026-05-11)
 
 ### Feat
